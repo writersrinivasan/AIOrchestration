@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-jb), ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: #070914;
+  color: #e5e7f0;
+}
+
+body {
+  background-image:
+    radial-gradient(1200px 600px at 10% -10%, rgba(139, 92, 246, 0.18), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, rgba(14, 165, 233, 0.14), transparent 60%),
+    radial-gradient(900px 600px at 50% 110%, rgba(16, 185, 129, 0.1), transparent 60%);
+  background-attachment: fixed;
+}
+
+.glass {
+  background: rgba(17, 20, 38, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  backdrop-filter: blur(10px);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #a78bfa, #38bdf8 35%, #34d399 65%, #fbbf24);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Animated flow along an active SVG edge */
+.flow-edge {
+  stroke-dasharray: 8 6;
+  animation: flow 0.8s linear infinite;
+}
+@keyframes flow {
+  to {
+    stroke-dashoffset: -28;
+  }
+}
+
+.pulse-ring {
+  animation: pulseRing 1.4s ease-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+@keyframes pulseRing {
+  0% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.18);
+  }
+}
+
+.shake {
+  animation: shake 0.45s ease-in-out 2;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  75% { transform: translateX(3px); }
+}
+
+.fade-in {
+  animation: fadeIn 0.35s ease-out both;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+.scrollbar-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.3); border-radius: 3px; }
+
+.prose-chat p { margin: 0.4rem 0; }
+.prose-chat ul { list-style: disc; padding-left: 1.2rem; margin: 0.4rem 0; }
+.prose-chat ol { list-style: decimal; padding-left: 1.2rem; margin: 0.4rem 0; }
+.prose-chat code { background: rgba(148,163,184,0.15); padding: 0.05rem 0.3rem; border-radius: 4px; font-size: 0.85em; }
+.prose-chat pre { background: #0b0e1d; border: 1px solid rgba(148,163,184,0.15); padding: 0.75rem; border-radius: 8px; overflow-x: auto; margin: 0.5rem 0; }
+.prose-chat pre code { background: none; padding: 0; }
+.prose-chat h1, .prose-chat h2, .prose-chat h3 { font-weight: 700; margin: 0.6rem 0 0.3rem; }
+.prose-chat strong { color: #f5f3ff; }
